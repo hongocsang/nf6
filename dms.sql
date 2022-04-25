@@ -1,0 +1,70 @@
+CREATE TABLE chungthu (
+id INT NOT NULL AUTO_INCREMENT,
+nam INT NOT NULL,
+thung_so JSON NOT NULL,
+yk_start INT NOT NULL,
+yk_end INT NOT NULL,
+eu BOOLEAN,
+nguoi_luu VARCHAR(255),
+ghi_chu TEXT(65000),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE khongdat (
+id INT NOT NULL AUTO_INCREMENT,
+nam JSON NOT NULL,
+sl_ktb INT NOT NULL,
+nguoi_luu VARCHAR(255),
+ghi_chu TEXT(65000),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE khongcap (
+id INT NOT NULL AUTO_INCREMENT,
+nam JSON NOT NULL,
+nguoi_luu VARCHAR(255),
+ghi_chu TEXT(65000),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE chonggiahong (
+id INT NOT NULL AUTO_INCREMENT,
+nam int NOT NULL,
+thung_so int NOT NULL,
+cqh INT NOT NULL,
+kcqh INT NOT NULL,
+nguoi_luu VARCHAR(255),
+ghi_chu TEXT(65000),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE bs_tt (
+id INT NOT NULL AUTO_INCREMENT,
+nam_bs JSON NOT NULL,
+nam_tt JSON NOT NULL,
+nguoi_luu VARCHAR(255),
+ghi_chu TEXT(65000),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE ke (
+id_ke INT NOT NULL AUTO_INCREMENT,
+vt_ke INT NOT NULL,
+vt_cot INT NOT NULL,
+vt_hang INT NOT NULL,
+bang VARCHAR(255) NOT NULL,
+id_bang INT NOT NULL,
+PRIMARY KEY (id_ke)
+);
+ALTER TABLE ke ADD CONSTRAINT vitri UNIQUE (vt_ke,vt_cot,vt_hang);
+
+CREATE TABLE user (
+id_user INT NOT NULL AUTO_INCREMENT,
+user VARCHAR(255) NOT NULL,
+pw VARCHAR(255) NOT NULL,
+PRIMARY KEY (id_user)
+);
+
+INSERT INTO user (user, pw) VALUES ("admin", "admin@123");
+INSERT INTO user (user, pw) VALUES ("ct", "ct@123");
+ALTER TABLE ke AUTO_INCREMENT = 1

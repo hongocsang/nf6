@@ -1,0 +1,15 @@
+.current { 
+    color: red; 
+}
+.tdtop {
+    border-top: 5px solid #ff0000;
+}
+
+.trt_r {
+    border-top: 5px solid #ff0000;
+    border-right: 5px solid #ff0000;
+}
+
+.tdright {
+    border-right: 5px solid #ff0000;
+}
